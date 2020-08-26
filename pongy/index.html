@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Pongy</title>
+        <script type="text/javascript"> <!--// scrolling title, just for fun.
+            (function titleScroller(text) {
+                document.title = text;
+                setTimeout(function () {
+                    titleScroller(text.substr(1) + text.substr(0, 1));
+                }, 250);
+            }("Pongy  ")); //-->
+        </script>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                border: 0;
+                overflow: hidden; /*  Disable scrollbars */
+                display: block;  /* No floating content on sides */
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id = 'canvas'
+             style = 'position: absolute;
+                          left: 0px;
+                           top: 0px;' >
+        </canvas>
+        <script src="pongy.js"></script>
+    </body>
+</html>
