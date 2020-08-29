@@ -1,17 +1,12 @@
 (function() {
     // we have canvas
-    var canvas = document.getElementById('canvas');
+    var canvas = document.getElementById('mainCanvas');
     // we have context
     var context = canvas.getContext('2d');
     // debug variable
     var debug = "";
     // how long have we been playing?
-    var timeElapsed = 0;
-    setInterval(function () {
-        if(document.hasFocus()){
-            timeElapsed += 0.01
-        }
-    }, 10);
+    var timeInit = Date.now();
     
     // our objects --two paddles and a ball.
     var leftPaddle = {
@@ -217,7 +212,7 @@
         context.textAlign = 'center';
         context.font="10px Georgia";
         //time elapsed
-        context.fillText(   "Time elapsed: " + (timeElapsed).toFixed(2).toString(),
+        context.fillText(   "Time elapsed: " + (0.001 * (Date.now() - timeInit)).toFixed(2).toString(),
                             window.innerWidth/2,
                             window.innerHeight - 20);
         context.fillText(   debug,
